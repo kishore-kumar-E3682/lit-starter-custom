@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e
+
+`npm bin`/lerna bootstrap
+`npm bin`/lerna clean --yes
+
+packages=(`find packages -name "package.json" -maxdepth 2 | xargs -I '{}' dirname '{}'`)
+
+  # Check whether the @crayon exist.
+if [ ! -d "./node_modules/@crayon" ]; then
+  mkdir ./node_modules/@crayon
+fi
+
+for package in ${packages[@]}; do
+  npmname=`node -e "console.log(require(\"${INIT_CWD}/${package}/package.json\").name)"`
+  if [ ! -L ${INIT_CWD}/node_modules/${npmname} ]; then
+    ln -sfv ${INIT_CWD}/${package} ${INIT_CWD}/node_modules/${npmname}
+  fi
+done

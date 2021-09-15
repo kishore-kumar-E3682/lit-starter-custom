@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.css.js","sourceRoot":"","sources":["styles.css.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,GAAG,EAAC,MAAM,aAAa,CAAC;AAChC,MAAM,CAAC,MAAM,MAAM,GAAG,GAAG,CAAA,8BAA8B,CAAC","sourcesContent":["import {css} from 'lit-element';\nexport const styles = css`button{border:1px solid red}`;\n"]}

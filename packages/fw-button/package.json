@@ -1,0 +1,14 @@
+{
+  "name": "@crayon/fw-button",
+  "version": "0.0.1",
+  "description": "Freshworks crayon -  button web component",
+  "main": "fw-button.js",
+  "module": "fw-button.js",
+  "dependencies": {
+    "lit": "^2.0.0-rc.1",
+    "tslib": "^2.0.1"
+  },
+  "scripts": {
+    "build:style": "node ../../scripts/sass-to-lit-css/index.js styles.scss"
+  }
+}
